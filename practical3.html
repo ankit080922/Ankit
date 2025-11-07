@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>College Timetable</title>
+</head>
+<body>
+    <h1>College Timetable</h1>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+        <caption><b>BCA Semester - II Timetable</b></caption>
+        <tr>
+            <th>Day</th>
+            <th>9-10 AM</th>
+            <th>10-11 AM</th>
+            <th>11-12 AM</th>
+            <th>12-1 PM</th>
+        </tr>
+        <tr>
+            <td><b>Monday</b></td>
+            <td rowspan="2">Maths</td>
+            <td>English</td>
+            <td>Computer</td>
+            <td rowspan="5">Lunch Break</td>
+        </tr>
+        <tr>
+            <td><b>Tuesday</b></td>
+            <td colspan="2">Programming Lab</td>
+        </tr>
+        <tr>
+            <td><b>Wednesday</b></td>
+            <td>Physics</td>
+            <td>Maths</td>
+            <td>
+                <!-- Nested Table -->
+                <table border="1">
+                    <tr><th>Lab</th></tr>
+                    <tr><td>HTML</td></tr>
+                    <tr><td>CSS</td></tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td><b>Thursday</b></td>
+            <td>English</td>
+            <td colspan="2">Database</td>
+        </tr>
+        <tr>
+            <td><b>Friday</b></td>
+            <td colspan="3">Project Work</td>
+        </tr>
+    </table>
+</body>
+</html>

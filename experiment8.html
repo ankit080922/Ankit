@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Profile Cards</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --card-bg: #ffffff;
+      --page-bg: #f6f6f6;
+      --accent: #1183ff;
+      --text: #333;
+      --muted: #7a7a7a;
+      --card-width: 240px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin: 0;
+      font-family: "Open Sans", sans-serif;
+      background: var(--page-bg);
+      color: var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding: 40px 20px;
+    }
+
+    .frame{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px;
+      border: 3px solid #222;
+      background: white;
+    }
+
+    h1{
+      font-family: "Merriweather", serif;
+      font-size: 20px;
+      margin: 0 0 18px;
+      text-align: center;
+    }
+
+    .cards-row{
+      display:flex;
+      gap: 28px;
+      justify-content:center;
+      align-items:flex-start;
+      flex-wrap:wrap;
+      padding: 24px 10px;
+    }
+
+    .card{
+      width: var(--card-width);
+      background: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: 0 8px 18px rgba(20,20,20,0.06);
+      padding: 36px 16px 22px;
+      text-align: center;
+      position: relative;
+    }
+
+    .avatar{
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:20px;
+      margin: -70px 0 10px; /* pulls avatar above card top */
+      box-shadow: 0 6px 14px rgba(17,131,255,0.16);
+      border: 6px solid #fff; /* white ring */
+    }
+
+    .card h3{
+      margin: 8px 0 6px;
+      font-size: 16px;
+      font-weight:700;
+      font-family: "Merriweather", serif;
+      color: #111;
+    }
+
+    .small{
+      font-size: 13px;
+      color: var(--muted);
+      line-height:1.5;
+    }
+
+    /* small screen tweaks */
+    @media (max-width:640px){
+      .frame{padding:18px}
+      .cards-row{gap:16px}
+      .card{width: 100%; max-width: 340px; margin: 0 auto;}
+    }
+  </style>
+</head>
+<body>
+
+  <div style="max-width:1100px;margin:0 auto 18px;padding:0 10px;">
+    <h1>Three student profile cards arranged in a row, centered</h1>
+  </div>
+
+  <div class="frame" role="region" aria-label="student cards container">
+    <div class="cards-row">
+
+      <article class="card" aria-label="Virat kohli">
+        <div style="height:0"></div> <!-- spacing so avatar overlaps nicely -->
+        <div class="avatar" aria-hidden="true">JK</div>
+        <h3>Virat kohli</h3>
+        <div class="small">
+          B.Tech - CSE<br>
+          Roll No: 2025b02310014<br>
+          1st Year
+        </div>
+      </article>
+
+      <article class="card" aria-label="Smriti mandhana">
+        <div style="height:0"></div>
+        <div class="avatar" aria-hidden="true">AR</div>
+        <h3>Smriti mandhana</h3>
+        <div class="small">
+          B.Tech - IT<br>
+          Roll No: 2025b02310059<br>
+          1st Year
+        </div>
+      </article>
+
+      <article class="card" aria-label="M.s dhoni">
+        <div style="height:0"></div>
+        <div class="avatar" aria-hidden="true">RK</div>
+        <h3>M.s dhoni</h3>
+        <div class="small">
+          B.Tech - ECE<br>
+          Roll No: 2025b02310016<br>
+          1st Year
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Major Versions of HTML — Layout Demo</title>
+  <style>
+    :root{
+      --bg: #ffffff;
+      --muted: #f6f8fb;
+      --blue: #1e66d0;
+      --box-blue: #dfeeff;
+      --box-blue-border: #9bbef5;
+      --box-yellow: #fff3d9;
+      --box-yellow-border: #f2c66a;
+      --text: #1b1b1b;
+      --card-radius: 10px;
+      --box-radius: 8px;
+      --shadow: 0 6px 18px rgba(22,33,62,0.06);
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,var(--muted), #fff);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:1100px;
+      background:transparent;
+      text-align:center;
+    }
+
+    h1{
+      color:var(--blue);
+      margin:0 0 26px;
+      font-size:22px;
+      font-weight:700;
+    }
+
+    .content{
+      display:flex;
+      gap:40px;
+      align-items:flex-start;
+      justify-content:center;
+      padding:18px;
+    }
+
+   
+    .panel{
+      flex:0 0 240px;
+      border-radius:14px;
+      padding:18px;
+      background:transparent;
+      border:3px solid rgba(30,102,208,0.12);
+      box-shadow: none;
+      display:flex;
+      flex-direction:column;
+      align-items:stretch;
+      min-height:360px;
+      justify-content:flex-start;
+    }
+
+    .panel .stack{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      margin-top:6px;
+      align-items:center;
+    }
+
+    .block-box{
+      width:86%;
+      background:var(--box-blue);
+      border:2px solid var(--box-blue-border);
+      padding:18px 8px;
+      border-radius:12px;
+      box-shadow: var(--shadow);
+      font-weight:600;
+      color:var(--blue);
+      text-align:center;
+    }
+
+    .panel small.caption{
+      display:block;
+      margin-top:18px;
+      font-size:13px;
+      color:#5a6b86;
+      text-align:left;
+    }
+
+    
+    .right{
+      flex:1;
+      min-width:420px;
+      background:transparent;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:20px;
+    }
+
+    .inline-wrap{
+      width:100%;
+      border-radius:12px;
+      padding:18px;
+      border:3px solid rgba(242,198,106,0.18);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:120px;
+      background: #fff;
+    }
+
+    .inline-row{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .inline-box{
+      background:var(--box-yellow);
+      border:2px solid var(--box-yellow-border);
+      padding:14px 22px;
+      border-radius:10px;
+      min-width:90px;
+      text-align:center;
+      font-weight:600;
+      box-shadow: var(--shadow);
+      color:#7a5b1a;
+    }
+
+    .right small.caption{
+      display:block;
+      margin-top:6px;
+      font-size:13px;
+      color:#5a6b86;
+      text-align:center;
+    }
+
+    /* Responsive */
+    @media (max-width:900px){
+      .content{flex-direction:column; gap:20px; align-items:center}
+      .panel{flex:unset; width:86%}
+      .right{min-width:unset; width:86%}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap" role="main" aria-labelledby="title">
+    <h1 id="title">Major Versions of HTML</h1>
+
+    <div class="content">
+      <!-- Left column: block-level stacked boxes -->
+      <aside class="panel" aria-label="Block level example">
+        <div class="stack" role="list">
+          <div class="block-box" role="listitem">Box 1</div>
+          <div class="block-box" role="listitem">Box 2</div>
+          <div class="block-box" role="listitem">Box 3</div>
+          <div class="block-box" role="listitem">Box 4</div>
+        </div>
+
+        <small class="caption" aria-hidden="true">Block-Level Element</small>
+      </aside>
+
+      <!-- Right column: inline boxes arranged horizontally -->
+      <section class="right" aria-label="Inline element example">
+        <div class="inline-wrap" role="region" aria-labelledby="inline-label">
+          <div class="inline-row" role="list">
+            <div class="inline-box" role="listitem">Box1</div>
+            <div class="inline-box" role="listitem">Box2</div>
+            <div class="inline-box" role="listitem">Box3</div>
+            <div class="inline-box" role="listitem">Box4</div>
+          </div>
+        </div>
+
+        <small id="inline-label" class="caption">Inline Element</small>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
